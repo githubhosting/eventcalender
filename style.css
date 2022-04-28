@@ -1,0 +1,382 @@
+html {
+  font-family: Quicksand;
+}
+body {
+  display: block;
+  margin-top: 8px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  margin-left: 8px;
+}
+div {
+  box-sizing: border-box;
+}
+
+.calander-nav {
+  text-align: center;
+  padding: 30px 0;
+}
+.calander-nav .current-month {
+  font-size: 38px;
+  font-weight: 700;
+  color: #0050b1;
+  margin: 0px 10px;
+  display: inline-block;
+  text-shadow: 2px 8px 6px rgb(0 0 0 / 20%),
+    0px -5px 35px rgb(255 255 255 / 30%);
+}
+
+.calander-container {
+  width: fit-content;
+  /* max-width: 700px; */
+  margin: 0px;
+  padding: 1rem;
+  background-color: #e4ebf5;
+  position: relative;
+  display: inline-block;
+  border-radius: 20px;
+  align-items: center;
+  box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+    -0.2rem -0.2rem 0.5rem var(--white);
+}
+
+.calander-head {
+  display: flex;
+}
+.calander-head .head-col {
+  flex-basis: calc(100% / 7);
+  color: hsl(0, 0%, 40%);
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  text-shadow: 2px 8px 6px rgb(0 0 0 / 10%),
+    0px -5px 35px rgb(255 255 255 / 30%);
+}
+
+.calander-body {
+  /* padding-left: 5rem; */
+  margin-top: 20px;
+  display: flex;
+  row-gap: 10px;
+  column-gap: 18px;
+  flex-wrap: wrap;
+  /* box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+    -0.2rem -0.2rem 0.5rem var(--white); */
+}
+
+:root {
+  --smaller: 0.75;
+  --primary-light: #8abdff;
+  --primary: #6d5dfc;
+  --primary-dark: #5b0eeb;
+  --white: #ffffff;
+  --greyLight-1: #e4ebf5;
+  --greyLight-2: #c8d0e7;
+  --greyLight-3: #bec8e4;
+  --greyDark: hsl(223, 40%, 30%);
+}
+.calander-body .col {
+  border-radius: 10px;
+
+  flex-basis: calc(100% / 8);
+  height: 90px;
+  border: 1px solid #ffffff;
+  padding: 10px;
+  position: relative;
+  box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+    -0.2rem -0.2rem 0.5rem var(--white);
+}
+.calander-body .col .date {
+  font-size: 32px;
+  text-shadow: 2px 8px 6px rgb(0 0 0 / 10%),
+    0px -5px 35px rgb(255 255 255 / 30%);
+  text-align: right;
+  /* color: #556270; */
+  color: var(--greyDark);
+  font-weight: 600;
+}
+
+.col.blocked {
+  background-color: var(--primary-light);
+}
+.col.blocked .date {
+  opacity: 0.9;
+}
+
+.event {
+  display: inline-block;
+  background: #338aff;
+  cursor: context-menu;
+  color: white;
+  font-size: 12px;
+  padding-top: 2px;
+  padding-right: 10px;
+  padding-bottom: 2px;
+  padding-left: 10px;
+  border-radius: 10px;
+  position: absolute;
+  white-space: nowrap;
+  /* height: 20px; */
+  z-index: 2;
+  margin-top: 10px;
+  left: 0;
+}
+.event.open-end {
+  border-radius: 20px 0 0 20px;
+}
+.event.open-start {
+  border-radius: 0px 20px 20px 0px;
+}
+.event.airbnb {
+  height: 10px;
+  background: #ff5a5e;
+  margin-left: 0;
+  margin-right: 0;
+  cursor: auto;
+}
+.event.airbnb:before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  border-radius: 15px;
+  background-color: #ff5a5e;
+  display: inline-block;
+  position: absolute;
+  top: -5px;
+  left: 0px;
+  background-image: url("https://novobrief.com/wp-content/uploads/2014/11/airbnb-logo.png");
+  background-size: cover;
+}
+.event.airbnb:after {
+  content: "";
+  height: 20px;
+  width: 20px;
+  border-radius: 15px;
+  background-color: #ff5a5e;
+  display: inline-block;
+  position: absolute;
+  top: -5px;
+  right: 0px;
+  background-image: url("https://novobrief.com/wp-content/uploads/2014/11/airbnb-logo.png");
+  background-size: cover;
+}
+.event.booking-com {
+  height: 10px;
+  background: #1470dc;
+  margin-left: 0;
+  margin-right: 0;
+  cursor: auto;
+}
+.event.booking-com:before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  border-radius: 15px;
+  background-color: #1470dc;
+  display: inline-block;
+  position: absolute;
+  top: -5px;
+  left: 0px;
+  background-image: url("http://media-assets-02.thedrum.com/cache/images/thedrum-prod/public-news-tmp-85019-booking--default--300.png");
+  background-size: cover;
+}
+.event.booking-com:after {
+  content: "";
+  height: 20px;
+  width: 20px;
+  border-radius: 15px;
+  background-color: #1470dc;
+  display: inline-block;
+  position: absolute;
+  top: -5px;
+  right: 0px;
+  background-image: url("http://media-assets-02.thedrum.com/cache/images/thedrum-prod/public-news-tmp-85019-booking--default--300.png");
+  background-size: cover;
+}
+
+.blocked.booked {
+  background: #f2f8eb;
+}
+
+.event-text {
+  padding-top: 0px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  z-index: 3;
+  text-shadow: 2px 8px 6px rgb(0 0 0 / 20%),
+    0px -5px 35px rgb(255 255 255 / 30%);
+}
+
+.event-popover {
+  padding: 20px;
+  background: white;
+  z-index: 5;
+  width: 200px;
+  display: inline-block;
+  position: absolute;
+  box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.29);
+  border: 1px solid #dbdbdb;
+  transition: all 0.3s ease;
+  animation: slideUp 0.3s 1;
+}
+.event-popover .duration {
+  font-size: 13px;
+  color: grey;
+}
+.event-popover .event-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+.event-popover.left:after {
+  content: "";
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  background: white;
+  transform: rotate(45deg);
+  top: -11px;
+  left: 20px;
+  border-left: 1px solid #dbdbdb;
+  border-top: 1px solid #dbdbdb;
+}
+.event-popover.right:after {
+  content: "";
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  background: white;
+  transform: rotate(45deg);
+  top: -11px;
+  right: 20px;
+  border-left: 1px solid #dbdbdb;
+  border-top: 1px solid #dbdbdb;
+}
+.event-popover .primary {
+  background: #32c11c;
+  color: white;
+  height: 32px;
+  font-size: 14px;
+  border: 0;
+  border-radius: 2px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+#pop-up {
+  display: none;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+}
+
+.section-footing {
+  border-top: #0d1013 1px solid;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  text-align: center;
+}
+.section-footing {
+  margin-top: 4rem;
+  left: 0;
+  /* bottom: 0; */
+  width: 100%;
+  border-top: #0d1013 1px solid;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  text-align: center;
+  position: fixed;
+}
+.main-team-subheading1 {
+  text-align: center;
+  width: 100%;
+  font-size: 24px;
+  font-weight: 500;
+  padding-top: 1rem;
+  line-height: 1px;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: hsl(0, 0%, 40%);
+}
+.main-team-subheading2 {
+  text-align: center;
+  width: 100%;
+  font-size: 28px;
+  font-weight: 500;
+  padding-top: 0.5rem;
+  line-height: 1px;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+  /* text-decoration: none; */
+  color: hsl(0, 0%, 40%);
+}
+.section-footing :hover {
+  color: var(--primary-dark);
+}
+
+
+
+.container {
+  color: #333;
+  background-color: #fff;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-weight: normal;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+}
+
+li {
+  display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+li span {
+  display: block;
+  font-size: 4.5rem;
+}
+
+.emoji {
+  display: none;
+  padding: 1rem;
+}
+
+.emoji span {
+  font-size: 4rem;
+  padding: 0 0.5rem;
+}
+
+@media all and (max-width: 768px) {
+  h1 {
+    font-size: calc(1.5rem * var(--smaller));
+  }
+
+  li {
+    font-size: calc(1.125rem * var(--smaller));
+  }
+
+  li span {
+    font-size: calc(3.375rem * var(--smaller));
+  }
+}
