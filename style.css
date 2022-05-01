@@ -327,11 +327,11 @@ div {
   color: var(--primary-dark);
 }
 
-
-
 .container {
   color: #333;
   background-color: #fff;
+  box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+    -0.2rem -0.2rem 0.5rem var(--white);
   border-radius: 1.5rem;
   padding: 1.5rem;
   margin: 0 auto;
@@ -379,4 +379,42 @@ li span {
   li span {
     font-size: calc(3.375rem * var(--smaller));
   }
+}
+
+.btn {
+  text-decoration: none;
+  display: block;
+  width: 150px;
+  position: relative;
+  text-align: center;
+  font-weight: 600;
+  color: var(--greyDark);
+  margin: 16px;
+  padding: 0.6rem 1rem;
+  font-size: 34px;
+  /* box-shadow: var(--shadow-white-3); */
+  border-radius: 1rem;
+  box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+    -0.2rem -0.2rem 0.5rem var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.a {
+  text-decoration: none;
+}
+.btnh{
+  text-decoration: none;
+  display: block;
+   
+}
+.btnh :hover {
+  text-decoration: none;
+  color: var(--first-color);
+  background: -webkit-linear-gradient(#00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
