@@ -4,7 +4,7 @@ var events = [
     days: 1,
     eventName: "Maths",
     channelid: "",
-    booking: false,
+    // booking: false,
   },
   {
     startdate: 12,
@@ -39,7 +39,7 @@ var events = [
     days: 1,
     eventName: "DT",
     channelid: "",
-    // booking: true,
+    booking: false,
   },
 ];
 
@@ -47,7 +47,7 @@ function assignStartDate() {
   var today = new Date();
   var month = today.getMonth() + 2;
   var year = today.getFullYear();
-  var checkDate = new Date("" + month + " 01, " + year + "");
+  var checkDate = new Date("" + month + " 05, " + year + "");
   startDate = checkDate.getDay() + 1;
 }
 function daysInThisMonth() {
@@ -110,9 +110,9 @@ function setDetails(el, eventname, eventduration, booking, i) {
 
 // function createEvent() {
 //   var newEvent = new Object();
-//   newEvent.startdate = 9;
+//   newEvent.startdate = 21;
 //   newEvent.days = 4;
-//   newEvent.eventName = "Chummas";
+//   newEvent.eventName = "";
 //   newEvent.booking = false;
 //   newEvent.channelid = "";
 //   events.push(newEvent);
@@ -235,8 +235,8 @@ function showPopUp(el, event) {
   document.getElementById("unlock").setAttribute("data-index", index);
   if (booking == "false") {
     popUp.style.display = "inline-block";
-    popUp.querySelector(".duration").textContent = duration;
-    popUp.querySelector(".event-name").textContent = name;
+    popUp.querySelector(".duration").textContent = "";
+    popUp.querySelector(".event-name").textContent = "🥳🎉";
     var Wx = window.innerWidth;
     var position = el.getBoundingClientRect();
     var x = position.left;
@@ -268,4 +268,3 @@ window.addEventListener("click", function (e) {
     document.getElementById("pop-up").style.display = "none";
   }
 });
-
