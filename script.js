@@ -1,53 +1,18 @@
 var events = [
-  {
-    startdate: 9,
-    days: 1,
-    eventName: "Maths",
-    channelid: "",
-    // booking: false,
-  },
-  {
-    startdate: 12,
-    days: 1,
-    eventName: "Physics",
-    channelid: "",
-    // booking: false,
-  },
-  {
-    startdate: 14,
-    days: 1,
-    eventName: "English",
-    channelid: "",
-    // booking: true,
-  },
-  {
-    startdate: 17,
-    days: 1,
-    eventName: "Electrical",
-    channelid: "",
-    // booking: true,
-  },
-  {
-    startdate: 19,
-    days: 1,
-    eventName: "Civil",
-    channelid: "",
-    // booking: true,
-  },
-  {
-    startdate: 21,
-    days: 1,
-    eventName: "DT",
-    channelid: "",
-    booking: false,
-  },
+  // {
+  //   startdate: 9,
+  //   days: 1,
+  //   eventName: "Maths",
+  //   channelid: "",
+  //   booking: false,
+  // },
 ];
 
 function assignStartDate() {
   var today = new Date();
   var month = today.getMonth() + 2;
   var year = today.getFullYear();
-  var checkDate = new Date("" + month + " 05, " + year + "");
+  var checkDate = new Date("" + month + " 06, " + year + "");
   startDate = checkDate.getDay() + 1;
 }
 function daysInThisMonth() {
