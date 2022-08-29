@@ -1,18 +1,18 @@
 var events = [
-  // {
-  //   startdate: 9,
-  //   days: 1,
-  //   eventName: "Maths",
-  //   channelid: "",
-  //   booking: false,
-  // },
+  {
+    startdate: 14,
+    days: 1,
+    eventName: "Maths",
+    channelid: "",
+    booking: false,
+  },
 ];
 
 function assignStartDate() {
   var today = new Date();
   var month = today.getMonth() + 2;
   var year = today.getFullYear();
-  var checkDate = new Date("" + month + " 06, " + year + "");
+  var checkDate = new Date("" + month + " 08, " + year + "");
   startDate = checkDate.getDay() + 1;
 }
 function daysInThisMonth() {
